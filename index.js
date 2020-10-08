@@ -19,14 +19,14 @@ $(document).ready(function () {
         $.each(present, function (i, val) {
             totalpresent += val
         })
-        alert("total present:"+totalpresent);
+        //console.log("total present:"+totalpresent);
         $.each(total, function (i, val) {
             totaltotal += val
         })
-        alert("total classes held:"+totaltotal);
+        //console.log("total classes held:"+totaltotal);
         finalAttendance = (totalpresent * 100) / totaltotal
         $('h4.widget-header').click(function(){
-            alert("Attendance:")
+            alert("Attendance:"+finalAttendance)
 
         })
 
