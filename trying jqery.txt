@@ -1,0 +1,32 @@
+var arr = $('td[data-title="Attendance"]')
+
+//  $.each(arr,function(i,val){
+//     console.log(val.innerText)
+//     })
+
+var tmp = []
+$.each(arr, function (i, val) {
+    tmp[i] = (val.innerText)
+})
+var total = []
+var present = []
+$.each(tmp, function (i, val) {
+    var t = []
+    t = val.split('/')
+    present[i] = parseInt(t[0])
+    total[i] = parseInt(t[1].split(" "))
+
+})
+// console.log(present)
+// console.log(total)
+var finalAttendance
+var totalpresent = 0
+var totaltotal = 0
+$.each(present, function (i, val) {
+    totalpresent += val
+})
+$.each(total, function (i, val) {
+    totaltotal += val
+})
+finalAttendance = (totalpresent * 100) / totaltotal
+console.log(finalAttendance)
